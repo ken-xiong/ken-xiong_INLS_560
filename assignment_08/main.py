@@ -1,10 +1,11 @@
 def get_file_choice():
-   choices = {'a': '60s-music.csv', 'b': 'athletes.csv'}
+   choices = {'a': '60s-music.csv', 'b': 'athletes.csv', 'c': 'mammals.csv'}
    while True:
        choice = input('''
 What file would you like to search?:
 a) 60s-music file
 b) athletes file
+c) mammals file
 x) to exit
 ''').lower()
        if choice == 'x':
@@ -16,7 +17,7 @@ x) to exit
 
 def search_file(file_name, search_term):
    search_term = search_term.lower() # Normalize search term to lowercase
-  
+
    with open(file_name, 'r') as file:
        content = file.read().lower() # Normalize file content to lowercase
 
@@ -40,10 +41,11 @@ def search_file(file_name, search_term):
 def main():
    while True:
        file_name = get_file_choice()
-   
+       if file_name is None:
+           print("Exiting program.")
+           break
        search_term = input(f'Enter the search term for {file_name} file: ').lower()
        search_file(file_name, search_term)
 
 if __name__ == '__main__':
    main()
-

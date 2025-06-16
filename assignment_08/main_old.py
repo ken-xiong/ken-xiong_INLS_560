@@ -15,7 +15,7 @@ while True:
    if file_variable == 'x':
        sys.exit() # this requires import sys
    elif file_variable == 'a':
-       file_variable ='60s-music.csv'
+       file_variable = '60s-music.csv'
    elif file_variable == 'b':
        file_variable = 'athletes.csv'
    else:
